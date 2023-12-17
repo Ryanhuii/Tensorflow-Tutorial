@@ -46,9 +46,11 @@ def capture_image():
 
 if __name__ == "__main__":
 
+    # load the droidcam website
     driver = webdriver.Firefox()
     driver.get('http://192.168.1.11:4747/')
     sleep(2)
+    # target the livefeed image element
     element = driver.find_element(By.ID,"feedimg")
     #getting element's location
     loc1= element.location
@@ -60,6 +62,7 @@ if __name__ == "__main__":
     new_thread = Thread(target=capture_image)
     new_thread.start()
 
+    # display the image and prediction inside the python GUI
     sleep(2)
     image_path = 'cropped-screenshot.png'
     root = tk.Tk()
