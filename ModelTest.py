@@ -4,9 +4,11 @@
 used this commands : 
     py -m pip install selenium
     py -m pip install pillow
+    py -m pip install flask
 https://bobbyhadz.com/blog/python-no-module-named-selenium
-
-
+https://selenium-python.readthedocs.io/locating-elements.html
+https://testerops.com/selenium-with-python/advanced-topics/cropping-an-image-using-pil/
+ChatGPT for creating a live image display with PIL & tkinter
 '''
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -46,7 +48,7 @@ if __name__ == "__main__":
 
     driver = webdriver.Firefox()
     driver.get('http://192.168.1.11:4747/')
-    sleep(3)
+    sleep(2)
     element = driver.find_element(By.ID,"feedimg")
     #getting element's location
     loc1= element.location
@@ -58,7 +60,7 @@ if __name__ == "__main__":
     new_thread = Thread(target=capture_image)
     new_thread.start()
 
-    sleep(3)
+    sleep(2)
     image_path = 'cropped-screenshot.png'
     root = tk.Tk()
     app = ImageApp(root, image_path)

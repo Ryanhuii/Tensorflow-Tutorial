@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script>
+        // function updateImage() {
+        //     // Get the reference to the image element
+        //     var imgElement = document.getElementById("dynamicImage");
+
+        //     // Generate a unique timestamp to force the browser to reload the image
+        //     var timestamp = new Date().getTime();
+
+        //     // Update the image source with the new timestamp
+        //     imgElement.src = "../cropped-screenshot.png?" + timestamp;
+
+        //     // Schedule the next update after a specific interval (e.g., 1000 milliseconds)
+        //     setTimeout(updateImage, 1000);
+        // }
+
+        // // Call the updateImage function when the page loads
+        // window.onload = updateImage;
+    </script>
+</head>
+<body>
+    <h1>Auto-Refreshing Image</h1>
+    <img id="dynamicImage" src="../cropped-screenshot.png" alt="Dynamic Image">
+</body>
+</html>
