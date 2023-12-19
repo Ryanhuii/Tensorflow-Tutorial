@@ -8,8 +8,7 @@ import numpy as np
 import os
 
 class ImageApp:
-    # class_names = ['banana','lemon','unknown']
-    class_names = ['Light', 'Wood']
+    class_names = ['banana', 'lemon', 'unknown']
     def __init__(self, root, image_path):
 
         # load the CNN model
@@ -45,7 +44,6 @@ class ImageApp:
             img = image.load_img(self.image_path, target_size=(180, 180))
             img_array = image.img_to_array(img)
             img_array = np.expand_dims(img_array, axis=0)
-            img_array /= 255.0  # Normalize pixel values to [0, 1]
 
             predictions = self.model.predict(img_array)
             score = tf.nn.softmax(predictions[0])

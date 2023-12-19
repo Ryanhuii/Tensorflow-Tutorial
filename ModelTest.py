@@ -48,6 +48,7 @@ if __name__ == "__main__":
 
     # load the droidcam website
     driver = webdriver.Firefox()
+    # enter device id
     driver.get('http://192.168.1.11:4747/')
     sleep(2)
     # target the livefeed image element
