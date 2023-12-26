@@ -12,7 +12,7 @@ class ImageApp:
     def __init__(self, root, image_path):
 
         # load the CNN model
-        self.model = tf.keras.models.load_model('my_model.h5')
+        self.model = tf.keras.models.load_model('models/my_model_v10.h5')
 
         self.root = root
         self.root.title("Image Viewer")
@@ -54,7 +54,7 @@ class ImageApp:
 
             # Update the text label
             # new_text = self.class_names[np.argmax(score)]
-            new_text = "This image most likely belongs to {} with a {:.2f} percent confidence.".format(self.class_names[np.argmax(score)], 100 * np.max(score))
+            new_text = "Image class: {} ({:.2f} percent confidence)".format(self.class_names[np.argmax(score)], 100 * np.max(score))
             self.text_label.configure(text=new_text)
 
         except Exception as e:
