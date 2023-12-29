@@ -12,7 +12,7 @@ class ImageApp:
     def __init__(self, root, image_path):
 
         # load the CNN model
-        self.model = tf.keras.models.load_model('models/my_model_v10.h5')
+        self.model = tf.keras.models.load_model('models/my_model_v18.h5')
 
         self.root = root
         self.root.title("Image Viewer")
