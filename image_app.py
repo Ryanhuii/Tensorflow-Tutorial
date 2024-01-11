@@ -8,11 +8,12 @@ import numpy as np
 import os
 
 class ImageApp:
+    image_dimension = 128
     class_names = ['banana', 'lemon', 'unknown']
     def __init__(self, root, image_path):
 
         # load the CNN model
-        self.model = tf.keras.models.load_model('models/my_model_v19.h5')
+        self.model = tf.keras.models.load_model('models/my_model_v20.h5')
 
         self.root = root
         self.root.title("Image Viewer")
@@ -41,7 +42,8 @@ class ImageApp:
             self.tk_image.paste(updated_image_copy)
 
             # feed the image into the CNN
-            img = image.load_img(self.image_path, target_size=(180, 180))
+            img = image.load_img(self.image_path, 
+                                 target_size=(self.image_dimension, self.image_dimension))
             img_array = image.img_to_array(img)
             img_array = np.expand_dims(img_array, axis=0)
 
